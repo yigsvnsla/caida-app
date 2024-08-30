@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@repo/ui": "*",
-    "next": "^15.0.0-canary.130",
-    "react": "^19.0.0-rc-b57d2823-20240822",
-    "react-dom": "^19.0.0-rc-b57d2823-20240822"
+    "next": "^15.0.0-canary.135",
+    "react": "^19.0.0-rc-fb9a90fa48-20240614",
+    "react-dom": "^19.0.0-rc-fb9a90fa48-20240614"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

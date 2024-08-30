@@ -1,6 +1,14 @@
-export default function Table() {
+
+
+
+export default function TableIndex({ params }: { params: { slug: string } }) {
+
+  console.log(params);
+
   return (
     <section >
+      {/* sesion:{} */}
+
       <div className="flex flex-col items-center justify-center p-4">
         <div className="grid grid-cols-3 gap-4 mb-8">
           <div className="w-24 h-32 border" />

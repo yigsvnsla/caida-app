@@ -51,10 +51,7 @@ const app = new Elysia()
   .post(
     "/create-table",
     (ctx) => {
-      const roomId = Math.random().toString(36).substring(7);
-      
-      console.log(ctx.body);
-      
+      const roomId = Math.random().toString(36).substring(7);    
       const { playerCount, hostNickname, gameMode } = ctx.body;
 
       rooms.set(roomId, {

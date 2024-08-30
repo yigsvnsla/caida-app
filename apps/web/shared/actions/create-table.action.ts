@@ -2,8 +2,6 @@
 import { redirect } from "next/navigation";
 
 export async function createTable(formData: FormData) {
-  console.log("createTable action: ", formData);
-
   const res = await fetch("http://localhost:4000/create-table", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -14,9 +12,8 @@ export async function createTable(formData: FormData) {
     }),
   });
   const { roomId } = await res.json();
-  // await new Promise((resolve) => setTimeout(resolve, 5000));
+  console.log("createTable action: ", formData);
+  // console.log("createTable response: ", await res.json());
 
-  console.log();
-
-  redirect(`/posts/${roomId}`);
+  redirect(`./room/${roomId}`);
 }
