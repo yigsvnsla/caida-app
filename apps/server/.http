@@ -1,0 +1,21 @@
+@hostname = http://localhost
+@port = 4000
+@host = {{hostname}}:{{port}}
+
+### Players
+GET {{host}}/table HTTP/1.1
+content-type: application/json
+
+### Players
+GET {{host}}/table/dui21n HTTP/1.1
+content-type: application/json
+
+###
+POST {{host}}/table HTTP/1.1
+content-type: application/json
+
+{
+  "player_host": "player_host",
+  "cant_players": 0,
+  "game_type": 0
+}

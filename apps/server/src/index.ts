@@ -1,4 +1,5 @@
 import { Elysia, Static, t } from "elysia";
+import { TableController } from "./table/controller";
 
 const GameRoom = t.Object({
   id: t.String(),
@@ -29,7 +30,7 @@ type JoinGameRoom = Static<typeof JoinGameRoom>;
 const rooms = new Map<string, GameRoom>();
 
 const app = new Elysia()
-
+  .use(TableController)
   .get("/list-tables", (ctx) => {
     ctx.set.status = 200;
     return [...rooms.values()];
@@ -51,7 +52,7 @@ const app = new Elysia()
   .post(
     "/create-table",
     (ctx) => {
-      const roomId = Math.random().toString(36).substring(7);    
+      const roomId = Math.random().toString(36).substring(7);
       const { playerCount, hostNickname, gameMode } = ctx.body;
 
       rooms.set(roomId, {
@@ -70,6 +71,7 @@ const app = new Elysia()
       body: CreateGameRoom,
     }
   )
+
   .ws("/game", {
     body: t.String(),
     response: t.String(),
